@@ -4,6 +4,11 @@
 
 using namespace std;
 
+// Text Color functions
+
+void Green()         {   cout<<"\033[0;32m";   }
+void ResetTextColor(){   cout<<"\033[0m";      }
+
 class Authentication    {
     private:
         string userName;
@@ -14,6 +19,8 @@ class Authentication    {
         void login()    {
             string uName;
             string pass;
+            cin.ignore();
+            cout<<"Login Tab....!"<<endl;
             cout<<"--------------------------"<<endl;
             cout<<"Enter user-Name : ";
             getline(cin, uName);
@@ -23,16 +30,16 @@ class Authentication    {
             ifstream fin(uName + ".txt");
 
             if(fin.is_open())   {
-                if(getline(fin,fullName) && 
-                    getline(fin, emailId) && 
-                    fin>>userName && 
-                    fin>>password)  {
+                if( getline(fin, fullName) && 
+                    getline(fin, emailId)  && 
+                    getline(fin, userName) && 
+                    getline(fin, password))  {
 
-                    if (password == pass)   {
-                        cout<<"Login"<<endl;
-                    }
-                    else
-                        cout<<"Invalid Password"<<endl;
+                        if (password == pass)   {
+                           cout<<"Login"<<endl;
+                        }
+                        else
+                            cout<<"Invalid Password"<<endl;
                 }
                 fin.close();
             }
@@ -40,7 +47,9 @@ class Authentication    {
                 cout<<"worng username";
         }
 
-        void rigestration() {
+        void registration() {
+            cin.ignore();
+            cout<<"Registration Tab....!"<<endl;
             cout<<"--------------------------"<<endl;
             cout<<"Enter Full Name : ";
             getline(cin, fullName);
@@ -53,15 +62,27 @@ class Authentication    {
             cout<<"--------------------------"<<endl;
 
             ofstream fout(userName + ".txt");
+            
             if(fout.is_open())  {
                 fout<<fullName<<"\n";
                 fout<<emailId<<"\n";
                 fout<<userName<<"\n";
                 fout<<password<<"\n";
-
                 fout.close();
+                
+                system("clear");
+                cout<<"-------------------------------"<<endl;
+                cout<<"Registration is Complete"<<endl;
+                cout<<"This is a UserName : ";
+                Green();
+                cout<<userName<<endl;
+                ResetTextColor();
+                cout<<"This is a Password : ";
+                Green();
+                cout<<password<<endl;
+                ResetTextColor();
             } else {
-                cout<<"Error";
+                cout<<"Registration is not Completed"<<endl;
             }
         }
 };
@@ -78,7 +99,7 @@ int main()  {
        if(x == 1)
         a1.login();
         else if(x == 2)
-            a1.rigestration();
+            a1.registration();
     }
     
 }
