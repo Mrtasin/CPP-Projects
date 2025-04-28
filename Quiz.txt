@@ -1,0 +1,54 @@
+Which of the following is the correct extension of the python file.
+.p
+.python
+.py
+None of these
+.py
+Which of the following statements is a module in python.
+class
+function
+.py file
+None of these
+.py file
+Which of the following statements is used to create blocks in python.
+{}
+Tab space
+one space
+b and c
+b and c
+Which of the following statements is used to create variables in python?
+double a
+int a
+x = 10
+None of these
+x = 10
+What will be the output of the following python code? < 98.5%3+9 >
+12.5
+8.75
+11.5
+11
+11.5
+What will be the output of the following python code? < 10/4*20//8 >
+5
+8.5
+6
+6.0
+6.0
+Which type of data return input() function in python.
+char
+string
+int 
+all type
+string
+Which of the following statements is print all keywords in python.
+print(keyword)
+print(kwlist)
+print(keyword.iskeyword)
+None of these
+none of these
+Which of the following statements is print unicode in python.
+print(ord(‘a’))
+print(“%d”,’A’)
+print(chr(‘B’))
+None of these
+print(ord('a'))
